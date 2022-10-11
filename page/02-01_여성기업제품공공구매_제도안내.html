@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여성기업제품 공공구매</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/contents.css">
+
+    <script src="../js/lib/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/slick.min.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/contents.js"></script>
+</head>
+<body>
+
+    <div id="skipNav">
+        <p><a href="#contents">본문바로가기</a></p>
+        <p><a href="#gnb">주메뉴바로가기</a></p>
+    </div>
+    
+    <div class="mask"></div>
+
+    <div class="fix_menu">
+        <ul>
+            <li>
+                <a href="#">
+                    <p class="img">
+                        <img src="../img/common/icon_see_product.png" alt="">
+                        <em>0</em>
+                    </p>
+                    <span>최근 본 상품</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p class="img">
+                        <img src="../img/common/icon_favorite_product.png" alt="">
+                        <em>2</em>
+                    </p>
+                    <span>관심상품</span>
+                </a>
+            </li>
+        </ul>
+        <button type="button" class="btn_top">
+            <span class="icon_top">상단으로</span>
+        </button>
+    </div><!-- fix_menu -->
+    
+    <div class="fix_menu_m">
+        <ul>
+            <li>
+                <button type="button" id="btn_see_product">
+                    <i class="icon_see_product"></i>
+                    <span>최근 본 상품</span>
+                </button>
+                <div class="see_products">
+                    <h5>최근본상품</h5>
+                    <div class="products_slider see_products_slider">
+                        <div class="fix_slick slider">
+                            <div class="item">
+                                <!-- .item 9개까지 가능 -->
+                                <a href="#"><img src="../img/common/img_fix_products01.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products02.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products03.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products04.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products05.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products06.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products07.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products08.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products09.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="../img/common/img_fix_products01.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products02.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="fix_slick_button">
+                            <div class="numbering"></div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn_see_products_close" class="btn_products_close">
+                        <i class="icon_see_products_close"></i>
+                        <span class="blind">최근본상품 닫기</span>
+                    </button>
+                </div><!-- see_products end -->
+            </li>
+            <li>
+                <button type="button" id="btn_favorite_product">
+                    <i class="icon_favorite_product"></i>
+                    <span>관심상품</span>
+                </button>
+                <div class="favorite_products">
+                    <h5>관심상품</h5>
+                    <div class="products_slider favorite_products_slider">
+                        <div class="fix_slick slider">
+                            <div class="item">
+                                <a href="#"><img src="../img/common/img_fix_products01.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products02.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products03.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products04.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="fix_slick_button">
+                            <div class="numbering"></div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn_favorite_products_close" class="btn_products_close">
+                        <i class="icon_favorite_products_close"></i>
+                        <span class="blind">관심상품 닫기</span>
+                    </button>
+                </div><!-- favorite_products end -->
+            </li>
+            <li>
+                <a href="#" id="btn_top_m">
+                    <i class="icon_top_m"></i>
+                    <span>Top</span>
+                </a>
+            </li>
+        </ul>
+    </div><!-- fix_menu_m end -->
+
+    <header>
+        <div class="header_top">
+            <div class="header_top_inner">
+                <!-- 로그인 전  start-->
+                <a href="#" class="login"><span>로그인</span></a>
+                <a href="#" class="join"><span>회원가입</span></a>
+                <!-- 로그인 전 end -->
+                <!-- 로그인 후 start -->
+                <!-- 
+                <a href="#" class="logout"><span>로그아웃</span></a>
+                <a href="#" class="mypage"><span>마이페이지</span></a>
+                <a href="#" class="cart"><span>상품보관함</span></a> 
+                -->
+                <!-- 로그인 후 end -->
+                <a href="#" class="qna"><span>고객지원</span></a>
+            </div>
+        </div><!-- header_top end -->
+        <div class="header_body">
+            <div class="header_body_inner">
+                <h1 id="logo">
+                    <a href="#">
+                        <img src="../img/common/logo.png" alt="여성기업제품 공공구매" class="logo_pc">
+                        <img src="../img/common/logo_m.png" alt="여성기업제품 공공구매" class="logo_m">
+                    </a>
+                </h1>
+                <div class="btn_mgnb_open"></div>
+                <button type="button" class="btn_mgnb_open">
+                    <span class="icon_mgnb_open">전체카테고리 열기</span>
+                </button>
+                <div id="search">
+                    <div id="primary_search">
+                        <form>
+                            <fieldset>
+                                <legend class="blind">통합검색</legend>
+                                <div class="keyword_group">
+                                    <input type="text" class="keyword" title="검색어입력폼" placeholder="검색어를 입력하세요">
+                                    <button type="submit" class="btn_search_primary">
+                                        <i class="icon_search_primary"></i>
+                                        <span class="blind">검색</span>
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div><!-- primary_search end -->
+                    <div class="detail_search">
+                        <button type="button" id="detail_search_open">
+                            상세검색<i class="icon_arr"></i>
+                        </button>
+                        <div class="detail_search_wrap">
+                            <div class="text">
+                                <h4>상세검색</h4>
+                                <p>공공기관의 여성기업제품 구매시<br class="mobileShow"> 검색기능을 활용하여 쉽게 물품을 찾으세요</p>
+                            </div>
+                            <div class="detail_search_body">
+                                <ul class="detail_search_list">
+                                    <li>
+                                        <strong>카테고리별</strong>
+                                        <div class="form_group">
+                                            <select title="첫번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                            <select title="두번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                            <select title="세번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                            <select title="네번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>지역별</strong>
+                                        <div class="form_group">
+                                            <select title="지역 선택">
+                                                <option value="">지역을 선택하세요</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>기업명</strong>
+                                        <div class="form_group">
+                                            <input type="text" class="form_input" title="기업명입력폼" placeholder="기업명을 입력 하세요">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>제품명</strong>
+                                        <div class="form_group">
+                                            <input type="text" class="form_input" title="제품명입력폼" placeholder="제품명을 입력 하세요">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="btn_detail_group">
+                                    <a href="#" class="btn_search_detail">검색하기</a>
+                                    <a href="#" class="btn_search_detail_reset"><i class="icon_search_detail_reset"></i>검색 초기화</a>
+                                </div>
+                            </div><!-- detail_search_body end -->
+                            <button type="button" id="btn_detail_search_close">
+                                <i class="icon_detail_search_close"></i>
+                                <span class="blind">상세검색 닫기</span>
+                            </button>
+                        </div><!-- detail_search_wrap end -->
+                    </div><!-- detail_search end -->
+                </div><!-- search end -->
+            </div><!-- header_body_inner end -->
+        </div><!-- header_body end -->
+        <div class="header_gnb">
+            <div class="header_gnb_inner">
+                <div id="sitemap">
+                    <button type="button" id="btn_sitemap_open">
+                        <span class="icon_sitemap_open">전체카테고리 열기</span>
+                    </button>
+                    <div class="sitemap_list">
+                        <div class="sitemap_list_inner">
+                            <ul class="depth01">
+                                <li><a href="#">물품</a></li>
+                                <li><a href="#">용역</a></li>
+                                <li><a href="#">공사</a></li>
+                            </ul>
+                            <ul class="depth02">
+                                <li><a href="#">건자재</a></li>
+                                <li><a href="#">기계/설비</a></li>
+                                <li><a href="#">사무/가전/가구</a></li>
+                                <li><a href="#">섬유/고무/광석</a></li>
+                                <li><a href="#">전기/시험/계측</a></li>
+                                <li><a href="#">화학/소방/안전/위생</a></li>
+                                <li><a href="#">전자/정보/통신</a></li>
+                                <li><a href="#">스포츠/악기/교구</a></li>
+                                <li><a href="#">의약품/의료기기</a></li>
+                                <li><a href="#">인쇄/출판/사진</a></li>
+                                <li><a href="#">운송기구및액세서리와부품</a></li>
+                                <li><a href="#">의류/가방/개인관리용품</a></li>
+                                <li><a href="#">시계/보석/원석제품</a></li>
+                                <li><a href="#">식음료품및담배제품</a></li>
+                                <li><a href="#">제조부품</a></li>
+                            </ul>
+                            <ul class="depth03">
+                                <li><a href="#">콘크리트/시멘트및플라스터</a></li>
+                                <li><a href="#">기본건축자재</a></li>
+                                <li><a href="#">건축용블록벽돌및타일</a></li>
+                                <li><a href="#">도로포장및조경재</a></li>
+                                <li><a href="#">창호및유리</a></li>
+                                <li><a href="#">외장마감재</a></li>
+                                <li><a href="#">영구구조물</a></li>
+                                <li><a href="#">조립식건물</a></li>
+                                <li><a href="#">내장마감재</a></li>
+                            </ul>
+                            <ul class="depth04">
+                                <li><a href="#">콘크리트/시멘트및플라스터</a></li>
+                                <li><a href="#">기본건축자재</a></li>
+                                <li><a href="#">건축용블록벽돌및타일</a></li>
+                                <li><a href="#">도로포장및조경재</a></li>
+                                <li><a href="#">창호및유리</a></li>
+                                <li><a href="#">외장마감재</a></li>
+                            </ul>
+                            <button type="button" id="btn_sitemap_close">
+                                <i class="icon_sitemap_close"></i>
+                                <span class="blind">전체카테고리 닫기</span>
+                            </button>
+                        </div>
+                    </div><!-- sitemap_list end -->
+                </div><!-- sitemap end -->
+                <div class="mgnb_top">
+                    <h1><img src="../img/common/mgnb_logo.png" alt="여성기업제품 공공구매"></h1>
+                    <button type="button" id="btn_mgnb_close">
+                        <span class="icon_mgnb_close">전체카테고리 닫기</span>
+                    </button>
+                </div><!-- mgnb_top end -->
+                <ul class="menu_list">
+                    <li class="mgnb">
+                        <a href="#">전체카테고리</a>
+                        <div id="gnb">
+                            <ul>
+                                <li class="on">
+                                    <a href="#">물품</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">건자재</a>
+                                            <ul>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">기계/설비</a>
+                                            <ul>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">사무/가전/가구</a></li>
+                                        <li><a href="#">섬유/고무/광석</a></li>
+                                        <li><a href="#">전기/시험/계측</a></li>
+                                        <li><a href="#">화학/소방/안전/위생</a></li>
+                                        <li><a href="#">전자/정보/통신</a></li>
+                                        <li><a href="#">스포츠/악기/교구</a></li>
+                                        <li><a href="#">의약품/의료기기</a></li>
+                                        <li><a href="#">인쇄/출판/사진</a></li>
+                                        <li><a href="#">운송기구및액세서리와부품</a></li>
+                                        <li><a href="#">의류/가방/개인관리용품</a></li>
+                                        <li><a href="#">시계/보석/원석제품</a></li>
+                                        <li><a href="#">식음료품및담배제품</a></li>
+                                        <li><a href="#">제조부품</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">용역</a>
+                                    <ul>
+                                        <li><a href="#">메뉴1</a></li>
+                                        <li><a href="#">메뉴2</a></li>
+                                        <li><a href="#">메뉴3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">공사</a>
+                                    <ul>
+                                        <li><a href="#">메뉴4</a></li>
+                                        <li><a href="#">메뉴5</a></li>
+                                        <li><a href="#">메뉴6</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- gnb end -->
+                    </li><!-- mgnb end -->
+                    <li>
+                        <a href="#" id="btn_txttype_open">업체별상품</a>
+                        <div class="txttype">
+                            <div class="txttype_top">
+                                <div class="txttype_all"><a href="#" class="on">전체</a></div>
+                                <div class="txttype_text">
+                                    <div class="txttype_ko">
+                                        <a href="#">ㄱ</a>
+                                        <a href="#">ㄴ</a>
+                                        <a href="#">ㄷ</a>
+                                        <a href="#">ㄹ</a>
+                                        <a href="#">ㅁ</a>
+                                        <a href="#">ㅂ</a>
+                                        <a href="#">ㅅ</a>
+                                        <a href="#">ㅇ</a>
+                                        <a href="#">ㅈ</a>
+                                        <a href="#">ㅊ</a>
+                                        <a href="#">ㅋ</a>
+                                        <a href="#">ㅌ</a>
+                                        <a href="#">ㅍ</a>
+                                        <a href="#">ㅎ</a>
+                                    </div>
+                                    <div class="txttype_en">
+                                        <a href="#">A</a>
+                                        <a href="#">B</a>
+                                        <a href="#">C</a>
+                                        <a href="#">D</a>
+                                        <a href="#">E</a>
+                                        <a href="#">F</a>
+                                        <a href="#">G</a>
+                                        <a href="#">H</a>
+                                        <a href="#">I</a>
+                                        <a href="#">J</a>
+                                        <a href="#">K</a>
+                                        <a href="#">L</a>
+                                        <a href="#">M</a>
+                                        <a href="#">N</a>
+                                        <a href="#">O</a>
+                                        <a href="#">P</a>
+                                        <a href="#">Q</a>
+                                        <a href="#">R</a>
+                                        <a href="#">S</a>
+                                        <a href="#">T</a>
+                                        <a href="#">U</a>
+                                        <a href="#">V</a>
+                                        <a href="#">W</a>
+                                        <a href="#">X</a>
+                                        <a href="#">Y</a>
+                                        <a href="#">Z</a>
+                                    </div>
+                                </div><!-- txttype_text end -->
+                            </div><!-- txttype_top end -->
+                            <div class="txttype_list">
+                                <ul>
+                                    <li><a href="#">(주)RMG</a></li>
+                                    <li><a href="#">감자이모</a></li>
+                                    <li><a href="#">그리다(Gurida)</a></li>
+                                    <li><a href="#">꿈길자공감연구소</a></li>
+                                    <li><a href="#">농업회사법인(주)녹산에프엔티</a></li>
+                                    <li><a href="#">(주)디지털인더스</a></li>
+                                    <li><a href="#">(주)경원</a></li>
+                                    <li><a href="#">그린컴퍼니</a></li>
+                                    <li><a href="#">(주)꿈제작소</a></li>
+                                    <li><a href="#">농업회사법인 아이파머스(주)</a></li>
+                                    <li><a href="#">가나판촉물기념품</a></li>
+                                    <li><a href="#">글로벌 이스트 코리아</a></li>
+                                    <li><a href="#">농업회사법인 참좋은 파머 주식회사</a></li>
+                                    <li><a href="#">(주)RMG</a></li>
+                                    <li><a href="#">감자이모</a></li>
+                                    <li><a href="#">그리다(Gurida)</a></li>
+                                    <li><a href="#">꿈길자공감연구소</a></li>
+                                    <li><a href="#">농업회사법인(주)녹산에프엔티</a></li>
+                                    <li><a href="#">(주)디지털인더스</a></li>
+                                    <li><a href="#">(주)경원</a></li>
+                                    <li><a href="#">그린컴퍼니</a></li>
+                                    <li><a href="#">(주)꿈제작소</a></li>
+                                    <li><a href="#">농업회사법인 아이파머스(주)</a></li>
+                                    <li><a href="#">가나판촉물기념품</a></li>
+                                    <li><a href="#">글로벌 이스트 코리아</a></li>
+                                    <li><a href="#">농업회사법인 참좋은 파머 주식회사</a></li>
+                                </ul>
+                            </div>
+                            <button type="button" id="btn_txttype_close" class="btn_type_close">
+                                <i class="icon_txttype_close"></i>
+                                <span class="blind">업체별상품 닫기</span>
+                            </button>
+                        </div><!-- txttype end -->
+                    </li>
+                    <li>
+                        <a href="#" id="btn_localtype_open">지역별상품</a>
+                        <div class="localtype">
+                            <ul>
+                                <li><a href="#">서울</a></li>
+                                <li><a href="#">충북</a></li>
+                                <li><a href="#">부산</a></li>
+                                <li><a href="#">전북</a></li>
+                                <li><a href="#">대구경북</a></li>
+                                <li><a href="#">경남</a></li>
+                                <li><a href="#">광주</a></li>
+                                <li><a href="#">제주</a></li>
+                                <li><a href="#">대전</a></li>
+                                <li><a href="#">세종충남</a></li>
+                                <li><a href="#">인천</a></li>
+                                <li><a href="#">전남</a></li>
+                                <li><a href="#">울산</a></li>
+                                <li><a href="#">경기북부</a></li>
+                                <li><a href="#">강원</a></li>
+                                <li><a href="#">본회</a></li>
+                                <li><a href="#">경기</a></li>
+                            </ul>
+                            <button type="button" id="btn_localtype_close" class="btn_type_close">
+                                <i class="icon_localtype_close"></i>
+                                <span class="blind">지역별상품 닫기</span>
+                            </button>
+                        </div><!-- localtype end -->
+                    </li>
+                    <li>
+                        <a href="#">공공구매 제도안내</a>
+                    </li>
+                    <li>
+                        <a href="#">여성기업확인</a>
+                    </li>
+                </ul>
+            </div><!-- header_gnb_inner end -->
+        </div><!-- header_gnb end -->
+    </header>
+
+    <div id="container">
+
+        <div class="sidebar">
+            <h3 class="sidebar_title">여성기업제품 공공구매</h3>
+            <div id="lnb">
+                <ul>
+                    <li class="on"><a href="#">제도안내</a></li>
+                </ul>
+            </div><!-- lnb end -->
+        </div><!-- sidebar end -->
+
+        <div id="contents">
+            <div class="page_top">
+                <h4 class="page_title">제도안내</h4>
+                <ol class="page_navigation">
+                    <li><a href="#">홈</a></li>
+                    <li><span>여성기업제품 공공구매</span></li>
+                    <li><span>제도안내</span></li>
+                </ol>
+            </div><!-- page_top end -->
+
+            <h6 class="tit_style01">여성기업제품 공공구매제도 안내</h5>
+            <p class="tit_style02">1. 여성기업제품 공공구매제도의 정의</p>
+            <p class="txt_style01">공공기관에서 여성기업제품을 우선 구매함으로써 여성기업제품 구매를 촉진하기 위한 제도입니다.</p>
+            <p class="tit_style02">2. 여성기업제품 공공구매 의무화(’14.1.1 시행)</p>
+            <div class="icon_box_style01">
+                <div class="img"><img src="../img/contents/icon_box01.png" alt=""></div>
+                <p>
+                    「여성기업지원에 관한 법률」 제9조 및 동법 시행령 제7조에 의거하여 공공기관은
+                    여성기업제품을 <b class="strong_txt1">물품·용역의 경우 각 구매 총액의 5%</b>이상, <b class="strong_txt1">공사의 경우 구매총액에서 3%</b>이상을
+                    구매하여야 합니다.
+                </p>
+            </div>
+            <p class="tit_style02">3. 여성기업제품 공공구매 실적</p>
+            <span class="unit">(단위 : 조원, %)</span>
+            <div class="table_scroll">
+                <div class="table_scroll_inner">
+                    <table class="table_data">
+                        <caption>여성기업제품 공공구매 실적 안내표(구분, 2014년, 2015년, 2016년, 2018년, 구매액, 비율)</caption>
+                        <colgroup>
+                            <col style="width: auto;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                            <col style="width: 8.3%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2">구분</th>
+                                <th scope="colgroup" colspan="2">2014년</th>
+                                <th scope="colgroup" colspan="2">2015년</th>
+                                <th scope="colgroup" colspan="2">2016년</th>
+                                <th scope="colgroup" colspan="2">2017년</th>
+                                <th scope="colgroup" colspan="2">2018년</th>
+                            </tr>
+                            <tr>
+                                <th scope="col" class="bl_solid">구매액</th>
+                                <th scope="col">비율</th>
+                                <th scope="col">구매액</th>
+                                <th scope="col">비율</th>
+                                <th scope="col">구매액</th>
+                                <th scope="col">비율</th>
+                                <th scope="col">구매액</th>
+                                <th scope="col">비율</th>
+                                <th scope="col">구매액</th>
+                                <th scope="col">비율</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>전체</td>
+                                <td>115.5</td>
+                                <td rowspan="2">4.8</td>
+                                <td>119.2</td>
+                                <td rowspan="2">6.0</td>
+                                <td>119.9</td>
+                                <td rowspan="2">5.8</td>
+                                <td>123.4</td>
+                                <td rowspan="2">8.0</td>
+                                <td>123.4</td>
+                                <td rowspan="2">8.6</td>
+                            </tr>
+                            <tr>
+                                <td>여성기업제품</td>
+                                <td>5.5</td>
+                                <td>7.1</td>
+                                <td>6.9</td>
+                                <td>9.91</td>
+                                <td>10.58</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- table_scroll end -->
+            <p class="tit_style02">4. 여성기업제품 소액수의 계약 금액</p>
+            <div class="table_scroll">
+                <div class="table_scroll_inner">
+                    <table class="table_data">
+                        <caption>여성기업제품 소액수의 계약 금액 안내표(금액, 1인 견적에 의한 수의계약 가능 기업, 관련법률)</caption>
+                        <colgroup>
+                            <col style="width: 25%;">
+                            <col style="width: 35%;">
+                            <col style="width: auto;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">금액</th>
+                                <th scope="col">1인 견적에 의한 수의계약 가능 기업</th>
+                                <th scope="col">관련법률</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>추정가격 2천만원 이하</td>
+                                <td>모든 기업</td>
+                                <td rowspan="2" class="ta_l">
+                                    국가를 당사자로 하는 계약에 관한 법률 시행령 제30조 및 지방자치단체를 당사자로 하는 계약에 관한 법률 제30조
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>추정가격 5천만원 이하</td>
+                                <td>여성기업 가능</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- table_scroll end -->
+            <p class="tit_style02">5. 여성기업제품 입찰시, 가산점안내</p>
+            <p class="tit_style03">조달청 가산점</p>
+            <ul class="list_style01">
+                <li>여성기업 확인서를 보유한 여성기업으로서 존속기간에 따라 차등부여
+                    <ul class="list_style02">
+                        <li>관련근거 : 조달청 물품구매 적격심사 세부기준(`14.10.20.)
+                            <ul class="list_style03">
+                                <li>10년 이상 : 1점</li>
+                                <li>5년이상 ~ 10년미만 : 0.75점</li>
+                                <li>3년이상 ~ 5년미만 : 0.5점</li>
+                                <li>3년미만 : 0.25점</li>
+                            </ul>
+                        </li>
+                        <li>관련근거 : 조달청 일반용역 적격심사 세부기준(`14.09.02.)
+                            <ul class="list_style03">
+                                <li>5년이상 : 0.7점</li>
+                                <li>3년이상 ~ 5년미만 : 0.5점</li>
+                                <li>3년미만 : 0.25점</li>
+                            </ul>
+                        </li>
+                        <li>관련근거 : 조달청 기술용역 적격심사 세부기준(`14.08.06.)
+                            <ul class="list_style03">
+                                <li>3년이상 : 0.5점</li>
+                                <li>3년미만 : 0.25점</li>
+                            </ul>
+                        </li>
+                        <li>관련근거 : 중소기업자간 경쟁물품에 대한 계약이행능력심사 세부기준(`14.10.20.)
+                            <ul class="list_style03">
+                                <li>10년 이상 : 1점</li>
+                                <li>5년이상 ~ 10년미만 : 0.75점</li>
+                                <li>3년이상 ~ 5년미만 : 0.5점</li>
+                                <li>3년미만 : 0.25점</li>
+                            </ul>
+                        </li>
+                        <li>관련근거 : 다수공급자계약 2단계경쟁 업무처리기준(`14.10.30.)
+                            <ul class="list_style03">
+                                <li>여성기업(5점 이하)
+                                    <ul>
+                                        <li>1)존속기한 3년이상 : 배점 x 0.7</li>
+                                        <li>2)존속기한 3년미만 : 배점 x 0.5</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>여성기업 확인서를 보유하고 시공비율 30%이상인 여성기업에게 가점 부여
+                    <ul class="list_style02">
+                        <li>조달청 시설공사 집행기준(조달청 시설공사 적격심사 세부기준, `15.01.29.)
+                            <ul class="list_style03">
+                                <li>
+                                    추정가격 50억원 미만 공사 중 토목 또는 건축공사, 추정가격 10억원 미만 전문공사 및 전기·정보통신·소방시설·문화재공사의 경우<br />
+                                    여성기업의 시공비율이 30% 이상인 때에는 경영상태 취득점수(공동수급체 전체의 점수)에 10% 가산평가
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="tit_style03">행정자치부 가산점</p>
+            <ul class="list_style02">
+                <li>관련근거 : 지방자치단체 입찰 시 낙찰자 결정기준(`14.12.19.)
+                    <ul class="list_style03">
+                        <li>추정가격이 10억원 미만 입찰공사(특별신인도 1점)
+                            <ul>
+                                <li>1)한국여성경제인협회에서 인정·확인하는 여성기업 : 1점</li>
+                                <li>2)여성기업의 시공비율이 20% 이상인 공동수급체 : 1점</li>
+                            </ul>
+                        </li>
+                        <li>추정가격이 2억 원 이상인 물품의 평가기준
+                            <ul>
+                                <li>1)여성기업 : 0.5점</li>
+                            </ul>
+                        </li>
+                        <li>추정가격이 2억원 미만인 물품의 평가기준
+                            <ul>
+                                <li>1)여성기업 : 1점</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="tit_style03">국방부 가산점</p>
+            <ul class="list_style02">
+                <li>관련근거 : 일반용역 적격심사 기준 관련 훈령(`14.12.31.)
+                    <ul class="list_style03">
+                        <li>여성기업 : 0.3점</li>
+                    </ul>
+                </li>
+                <li>관련근거 : 물품 적격심사 기준 관련 훈령(`14.12.31.)
+                    <ul class="list_style03">
+                        <li>여성기업 : 0.4점</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="tit_style03">방위사업청 가산점</p>
+            <ul class="list_style02">
+                <li>관련근거 : 물품 적격심사 기준(`14.04.02.)
+                    <ul class="list_style03">
+                        <li>여성기업 : 0.1점</li>
+                    </ul>
+                </li>
+                <li>관련근거 : 용역 적격심사 세부기준(`13.05.22.)
+                    <ul class="list_style03">
+                        <li>여성기업 : 0.1점</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="tit_style03">환경부 가산점</p>
+            <ul class="list_style02">
+                <li>관련근거 : 건설폐기물처리용역 적격업체 평가기준(`14.07.25.)
+                    <ul class="list_style03">
+                        <li>15억원 이상인 용역 : 0.15점</li>
+                        <li>15억원 미만 5억원 이상인 용역 : 0.12점</li>
+                        <li>5억원 미만 2억원 이상인 용역 : 0.09점</li>
+                        <li>2억원 미만인 용역 : 0.06점</li>
+                    </ul>
+                </li>
+                <li class="dot_non"><p class="ref">가산점은 향후 변동될 수 있으니 각 공공기관 고시·지침 등을 재확인 바랍니다.</p></li>
+            </ul>
+        
+        </div><!-- contents end -->
+    </div><!-- container end -->
+
+    <footer>
+        <div class="footer_menu">
+            <ul>
+                <li><a href="#" class="strong_txt1 fm">개인정보보호방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">Q&A</a></li>
+            </ul>
+        </div><!-- footer_menu end -->
+        <div class="footer_body">
+            <div class="footer_info">
+                <div class="footer_addr">
+                    <img src="../img/common/footer_logo.png" alt="여성기업제품 공공구매" class="mobileHide">
+                    <img src="../img/common/footer_logo_m.png" alt="여성기업제품 공공구매" class="mobileShow">
+                    <p class="addr">135-514 서울특별시 강남구 역삼로 221 한국여성경제인협회 4층</p>
+                    <p class="t_tel">문의전화 : 02-369-0900</p>
+                    <p class="copy">Copyright(C) Korean Women Entrepreneurs Association All rights reserved.</p>
+                </div>
+                <div class="tel">
+                    <b>문의전화</b>
+                    <p>02-369-0900</p>
+                </div>
+            </div>
+            <div class="family_site">
+                <a href="#">기업규제 원탁협의 바로가기</a>
+                <a href="#">여성기업 종합정보포털 wBiz 바로가기</a>
+            </div>
+        </div><!-- footer_body end -->
+    </footer>
+
+</body>
+</html>

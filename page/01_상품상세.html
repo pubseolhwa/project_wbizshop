@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여성기업제품 공공구매</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/contents.css">
+
+    <script src="../js/lib/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/slick.min.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/contents.js"></script>
+    <script src="../js/popup.js"></script><!-- 팝업 js -->
+</head>
+<body>
+
+    <div id="skipNav">
+        <p><a href="#contents">본문바로가기</a></p>
+        <p><a href="#gnb">주메뉴바로가기</a></p>
+    </div>
+    
+    <div class="mask"></div>
+
+    <div class="fix_menu">
+        <ul>
+            <li>
+                <a href="#">
+                    <p class="img">
+                        <img src="../img/common/icon_see_product.png" alt="">
+                        <em>0</em>
+                    </p>
+                    <span>최근 본 상품</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p class="img">
+                        <img src="../img/common/icon_favorite_product.png" alt="">
+                        <em>2</em>
+                    </p>
+                    <span>관심상품</span>
+                </a>
+            </li>
+        </ul>
+        <button type="button" class="btn_top">
+            <span class="icon_top">상단으로</span>
+        </button>
+    </div><!-- fix_menu -->
+    
+    <div class="fix_menu_m">
+        <ul>
+            <li>
+                <button type="button" id="btn_see_product">
+                    <i class="icon_see_product"></i>
+                    <span>최근 본 상품</span>
+                </button>
+                <div class="see_products">
+                    <h5>최근본상품</h5>
+                    <div class="products_slider see_products_slider">
+                        <div class="fix_slick slider">
+                            <div class="item">
+                                <!-- .item 9개까지 가능 -->
+                                <a href="#"><img src="../img/common/img_fix_products01.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products02.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products03.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products04.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products05.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products06.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products07.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products08.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products09.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="../img/common/img_fix_products01.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products02.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="fix_slick_button">
+                            <div class="numbering"></div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn_see_products_close" class="btn_products_close">
+                        <i class="icon_see_products_close"></i>
+                        <span class="blind">최근본상품 닫기</span>
+                    </button>
+                </div><!-- see_products end -->
+            </li>
+            <li>
+                <button type="button" id="btn_favorite_product">
+                    <i class="icon_favorite_product"></i>
+                    <span>관심상품</span>
+                </button>
+                <div class="favorite_products">
+                    <h5>관심상품</h5>
+                    <div class="products_slider favorite_products_slider">
+                        <div class="fix_slick slider">
+                            <div class="item">
+                                <a href="#"><img src="../img/common/img_fix_products01.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products02.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products03.jpg" alt=""></a>
+                                <a href="#"><img src="../img/common/img_fix_products04.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="fix_slick_button">
+                            <div class="numbering"></div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn_favorite_products_close" class="btn_products_close">
+                        <i class="icon_favorite_products_close"></i>
+                        <span class="blind">관심상품 닫기</span>
+                    </button>
+                </div><!-- favorite_products end -->
+            </li>
+            <li>
+                <a href="#" id="btn_top_m">
+                    <i class="icon_top_m"></i>
+                    <span>Top</span>
+                </a>
+            </li>
+        </ul>
+    </div><!-- fix_menu_m end -->
+
+    <header>
+        <div class="header_top">
+            <div class="header_top_inner">
+                <!-- 로그인 전  start-->
+                <a href="#" class="login"><span>로그인</span></a>
+                <a href="#" class="join"><span>회원가입</span></a>
+                <!-- 로그인 전 end -->
+                <!-- 로그인 후 start -->
+                <!-- 
+                <a href="#" class="logout"><span>로그아웃</span></a>
+                <a href="#" class="mypage"><span>마이페이지</span></a>
+                <a href="#" class="cart"><span>상품보관함</span></a> 
+                -->
+                <!-- 로그인 후 end -->
+                <a href="#" class="qna"><span>고객지원</span></a>
+            </div>
+        </div><!-- header_top end -->
+        <div class="header_body">
+            <div class="header_body_inner">
+                <h1 id="logo">
+                    <a href="#">
+                        <img src="../img/common/logo.png" alt="여성기업제품 공공구매" class="logo_pc">
+                        <img src="../img/common/logo_m.png" alt="여성기업제품 공공구매" class="logo_m">
+                    </a>
+                </h1>
+                <div class="btn_mgnb_open"></div>
+                <button type="button" class="btn_mgnb_open">
+                    <span class="icon_mgnb_open">전체카테고리 열기</span>
+                </button>
+                <div id="search">
+                    <div id="primary_search">
+                        <form>
+                            <fieldset>
+                                <legend class="blind">통합검색</legend>
+                                <div class="keyword_group">
+                                    <input type="text" class="keyword" title="검색어입력폼" placeholder="검색어를 입력하세요">
+                                    <button type="submit" class="btn_search_primary">
+                                        <i class="icon_search_primary"></i>
+                                        <span class="blind">검색</span>
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div><!-- primary_search end -->
+                    <div class="detail_search">
+                        <button type="button" id="detail_search_open">
+                            상세검색<i class="icon_arr"></i>
+                        </button>
+                        <div class="detail_search_wrap">
+                            <div class="text">
+                                <h4>상세검색</h4>
+                                <p>공공기관의 여성기업제품 구매시<br class="mobileShow"> 검색기능을 활용하여 쉽게 물품을 찾으세요</p>
+                            </div>
+                            <div class="detail_search_body">
+                                <ul class="detail_search_list">
+                                    <li>
+                                        <strong>카테고리별</strong>
+                                        <div class="form_group">
+                                            <select title="첫번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                            <select title="두번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                            <select title="세번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                            <select title="네번째 분류 선택">
+                                                <option value="">카테고리를 선택하세요</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>지역별</strong>
+                                        <div class="form_group">
+                                            <select title="지역 선택">
+                                                <option value="">지역을 선택하세요</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>기업명</strong>
+                                        <div class="form_group">
+                                            <input type="text" class="form_input" title="기업명입력폼" placeholder="기업명을 입력 하세요">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>제품명</strong>
+                                        <div class="form_group">
+                                            <input type="text" class="form_input" title="제품명입력폼" placeholder="제품명을 입력 하세요">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="btn_detail_group">
+                                    <a href="#" class="btn_search_detail">검색하기</a>
+                                    <a href="#" class="btn_search_detail_reset"><i class="icon_search_detail_reset"></i>검색 초기화</a>
+                                </div>
+                            </div><!-- detail_search_body end -->
+                            <button type="button" id="btn_detail_search_close">
+                                <i class="icon_detail_search_close"></i>
+                                <span class="blind">상세검색 닫기</span>
+                            </button>
+                        </div><!-- detail_search_wrap end -->
+                    </div><!-- detail_search end -->
+                </div><!-- search end -->
+            </div><!-- header_body_inner end -->
+        </div><!-- header_body end -->
+        <div class="header_gnb">
+            <div class="header_gnb_inner">
+                <div id="sitemap">
+                    <button type="button" id="btn_sitemap_open">
+                        <span class="icon_sitemap_open">전체카테고리 열기</span>
+                    </button>
+                    <div class="sitemap_list">
+                        <div class="sitemap_list_inner">
+                            <ul class="depth01">
+                                <li><a href="#">물품</a></li>
+                                <li><a href="#">용역</a></li>
+                                <li><a href="#">공사</a></li>
+                            </ul>
+                            <ul class="depth02">
+                                <li><a href="#">건자재</a></li>
+                                <li><a href="#">기계/설비</a></li>
+                                <li><a href="#">사무/가전/가구</a></li>
+                                <li><a href="#">섬유/고무/광석</a></li>
+                                <li><a href="#">전기/시험/계측</a></li>
+                                <li><a href="#">화학/소방/안전/위생</a></li>
+                                <li><a href="#">전자/정보/통신</a></li>
+                                <li><a href="#">스포츠/악기/교구</a></li>
+                                <li><a href="#">의약품/의료기기</a></li>
+                                <li><a href="#">인쇄/출판/사진</a></li>
+                                <li><a href="#">운송기구및액세서리와부품</a></li>
+                                <li><a href="#">의류/가방/개인관리용품</a></li>
+                                <li><a href="#">시계/보석/원석제품</a></li>
+                                <li><a href="#">식음료품및담배제품</a></li>
+                                <li><a href="#">제조부품</a></li>
+                            </ul>
+                            <ul class="depth03">
+                                <li><a href="#">콘크리트/시멘트및플라스터</a></li>
+                                <li><a href="#">기본건축자재</a></li>
+                                <li><a href="#">건축용블록벽돌및타일</a></li>
+                                <li><a href="#">도로포장및조경재</a></li>
+                                <li><a href="#">창호및유리</a></li>
+                                <li><a href="#">외장마감재</a></li>
+                                <li><a href="#">영구구조물</a></li>
+                                <li><a href="#">조립식건물</a></li>
+                                <li><a href="#">내장마감재</a></li>
+                            </ul>
+                            <ul class="depth04">
+                                <li><a href="#">콘크리트/시멘트및플라스터</a></li>
+                                <li><a href="#">기본건축자재</a></li>
+                                <li><a href="#">건축용블록벽돌및타일</a></li>
+                                <li><a href="#">도로포장및조경재</a></li>
+                                <li><a href="#">창호및유리</a></li>
+                                <li><a href="#">외장마감재</a></li>
+                            </ul>
+                            <button type="button" id="btn_sitemap_close">
+                                <i class="icon_sitemap_close"></i>
+                                <span class="blind">전체카테고리 닫기</span>
+                            </button>
+                        </div>
+                    </div><!-- sitemap_list end -->
+                </div><!-- sitemap end -->
+                <div class="mgnb_top">
+                    <h1><img src="../img/common/mgnb_logo.png" alt="여성기업제품 공공구매"></h1>
+                    <button type="button" id="btn_mgnb_close">
+                        <span class="icon_mgnb_close">전체카테고리 닫기</span>
+                    </button>
+                </div><!-- mgnb_top end -->
+                <ul class="menu_list">
+                    <li class="mgnb">
+                        <a href="#">전체카테고리</a>
+                        <div id="gnb">
+                            <ul>
+                                <li class="on">
+                                    <a href="#">물품</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">건자재</a>
+                                            <ul>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">기계/설비</a>
+                                            <ul>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                                <li><a href="#">3뎁스</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">사무/가전/가구</a></li>
+                                        <li><a href="#">섬유/고무/광석</a></li>
+                                        <li><a href="#">전기/시험/계측</a></li>
+                                        <li><a href="#">화학/소방/안전/위생</a></li>
+                                        <li><a href="#">전자/정보/통신</a></li>
+                                        <li><a href="#">스포츠/악기/교구</a></li>
+                                        <li><a href="#">의약품/의료기기</a></li>
+                                        <li><a href="#">인쇄/출판/사진</a></li>
+                                        <li><a href="#">운송기구및액세서리와부품</a></li>
+                                        <li><a href="#">의류/가방/개인관리용품</a></li>
+                                        <li><a href="#">시계/보석/원석제품</a></li>
+                                        <li><a href="#">식음료품및담배제품</a></li>
+                                        <li><a href="#">제조부품</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">용역</a>
+                                    <ul>
+                                        <li><a href="#">메뉴1</a></li>
+                                        <li><a href="#">메뉴2</a></li>
+                                        <li><a href="#">메뉴3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">공사</a>
+                                    <ul>
+                                        <li><a href="#">메뉴4</a></li>
+                                        <li><a href="#">메뉴5</a></li>
+                                        <li><a href="#">메뉴6</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- gnb end -->
+                    </li><!-- mgnb end -->
+                    <li>
+                        <a href="#" id="btn_txttype_open">업체별상품</a>
+                        <div class="txttype">
+                            <div class="txttype_top">
+                                <div class="txttype_all"><a href="#" class="on">전체</a></div>
+                                <div class="txttype_text">
+                                    <div class="txttype_ko">
+                                        <a href="#">ㄱ</a>
+                                        <a href="#">ㄴ</a>
+                                        <a href="#">ㄷ</a>
+                                        <a href="#">ㄹ</a>
+                                        <a href="#">ㅁ</a>
+                                        <a href="#">ㅂ</a>
+                                        <a href="#">ㅅ</a>
+                                        <a href="#">ㅇ</a>
+                                        <a href="#">ㅈ</a>
+                                        <a href="#">ㅊ</a>
+                                        <a href="#">ㅋ</a>
+                                        <a href="#">ㅌ</a>
+                                        <a href="#">ㅍ</a>
+                                        <a href="#">ㅎ</a>
+                                    </div>
+                                    <div class="txttype_en">
+                                        <a href="#">A</a>
+                                        <a href="#">B</a>
+                                        <a href="#">C</a>
+                                        <a href="#">D</a>
+                                        <a href="#">E</a>
+                                        <a href="#">F</a>
+                                        <a href="#">G</a>
+                                        <a href="#">H</a>
+                                        <a href="#">I</a>
+                                        <a href="#">J</a>
+                                        <a href="#">K</a>
+                                        <a href="#">L</a>
+                                        <a href="#">M</a>
+                                        <a href="#">N</a>
+                                        <a href="#">O</a>
+                                        <a href="#">P</a>
+                                        <a href="#">Q</a>
+                                        <a href="#">R</a>
+                                        <a href="#">S</a>
+                                        <a href="#">T</a>
+                                        <a href="#">U</a>
+                                        <a href="#">V</a>
+                                        <a href="#">W</a>
+                                        <a href="#">X</a>
+                                        <a href="#">Y</a>
+                                        <a href="#">Z</a>
+                                    </div>
+                                </div><!-- txttype_text end -->
+                            </div><!-- txttype_top end -->
+                            <div class="txttype_list">
+                                <ul>
+                                    <li><a href="#">(주)RMG</a></li>
+                                    <li><a href="#">감자이모</a></li>
+                                    <li><a href="#">그리다(Gurida)</a></li>
+                                    <li><a href="#">꿈길자공감연구소</a></li>
+                                    <li><a href="#">농업회사법인(주)녹산에프엔티</a></li>
+                                    <li><a href="#">(주)디지털인더스</a></li>
+                                    <li><a href="#">(주)경원</a></li>
+                                    <li><a href="#">그린컴퍼니</a></li>
+                                    <li><a href="#">(주)꿈제작소</a></li>
+                                    <li><a href="#">농업회사법인 아이파머스(주)</a></li>
+                                    <li><a href="#">가나판촉물기념품</a></li>
+                                    <li><a href="#">글로벌 이스트 코리아</a></li>
+                                    <li><a href="#">농업회사법인 참좋은 파머 주식회사</a></li>
+                                    <li><a href="#">(주)RMG</a></li>
+                                    <li><a href="#">감자이모</a></li>
+                                    <li><a href="#">그리다(Gurida)</a></li>
+                                    <li><a href="#">꿈길자공감연구소</a></li>
+                                    <li><a href="#">농업회사법인(주)녹산에프엔티</a></li>
+                                    <li><a href="#">(주)디지털인더스</a></li>
+                                    <li><a href="#">(주)경원</a></li>
+                                    <li><a href="#">그린컴퍼니</a></li>
+                                    <li><a href="#">(주)꿈제작소</a></li>
+                                    <li><a href="#">농업회사법인 아이파머스(주)</a></li>
+                                    <li><a href="#">가나판촉물기념품</a></li>
+                                    <li><a href="#">글로벌 이스트 코리아</a></li>
+                                    <li><a href="#">농업회사법인 참좋은 파머 주식회사</a></li>
+                                </ul>
+                            </div>
+                            <button type="button" id="btn_txttype_close" class="btn_type_close">
+                                <i class="icon_txttype_close"></i>
+                                <span class="blind">업체별상품 닫기</span>
+                            </button>
+                        </div><!-- txttype end -->
+                    </li>
+                    <li>
+                        <a href="#" id="btn_localtype_open">지역별상품</a>
+                        <div class="localtype">
+                            <ul>
+                                <li><a href="#">서울</a></li>
+                                <li><a href="#">충북</a></li>
+                                <li><a href="#">부산</a></li>
+                                <li><a href="#">전북</a></li>
+                                <li><a href="#">대구경북</a></li>
+                                <li><a href="#">경남</a></li>
+                                <li><a href="#">광주</a></li>
+                                <li><a href="#">제주</a></li>
+                                <li><a href="#">대전</a></li>
+                                <li><a href="#">세종충남</a></li>
+                                <li><a href="#">인천</a></li>
+                                <li><a href="#">전남</a></li>
+                                <li><a href="#">울산</a></li>
+                                <li><a href="#">경기북부</a></li>
+                                <li><a href="#">강원</a></li>
+                                <li><a href="#">본회</a></li>
+                                <li><a href="#">경기</a></li>
+                            </ul>
+                            <button type="button" id="btn_localtype_close" class="btn_type_close">
+                                <i class="icon_localtype_close"></i>
+                                <span class="blind">지역별상품 닫기</span>
+                            </button>
+                        </div><!-- localtype end -->
+                    </li>
+                    <li>
+                        <a href="#">공공구매 제도안내</a>
+                    </li>
+                    <li>
+                        <a href="#">여성기업확인</a>
+                    </li>
+                </ul>
+            </div><!-- header_gnb_inner end -->
+        </div><!-- header_gnb end -->
+    </header>
+
+    <!-- [전달사항] 상품목록과 상품상세에는 #container 에 .product 추가되어야 합니다. -->
+    <div id="container" class="product">
+
+        <div id="contents">
+            <div class="page_top">
+                <h4 class="page_title"><span class="">공사</span> 제품명 - 제품명이 길 경우 줄 바꿈 처리</h4>
+                <ol class="page_navigation">
+                    <li><a href="#">홈</a></li>
+                    <li><span>상품목록</span></li>
+                    <li><span>상품상세보기</span></li>
+                </ol>
+            </div><!-- page_top end -->
+
+            <div class="product_detail_info">
+                <div class="product_detail_thumb">
+                    <div class="detail_thumb_big">
+                        <div><p><img src="../img/contents/detail_thumb_ex01.jpg" alt=""></p></div>
+                        <div><p><img src="../img/contents/detail_thumb_ex02.jpg" alt=""></p></div>
+                        <div><p><img src="../img/contents/detail_thumb_ex03.jpg" alt=""></p></div>
+                        <div><p><img src="../img/contents/detail_thumb_ex04.jpg" alt=""></p></div>
+                    </div>
+                    <div class="detail_thumb_nav">
+                        <div><p><img src="../img/contents/detail_thumb_ex01.jpg" alt=""></p></div>
+                        <div><p><img src="../img/contents/detail_thumb_ex02.jpg" alt=""></p></div>
+                        <div><p><img src="../img/contents/detail_thumb_ex03.jpg" alt=""></p></div>
+                        <div><p><img src="../img/contents/detail_thumb_ex04.jpg" alt=""></p></div>
+                    </div>
+                </div><!-- product_detail_thumb end -->
+                <div class="data">
+                    <ul>
+                        <li><em>가격</em><div><b>45,000</b> 원</div></li>
+                        <li><em>업체명</em><div>업체명 노출 (업체명이 길 경우 줄 바꿈)</div></li>
+                        <li><em>원산지</em><div>원산지 노출</div></li>
+                        <li><em>제조사</em><div>제조사 노출 (제조사명이 길 경우 줄 바꿈)</div></li>
+                        <li><em>업종</em><div>업종 노출(업종이 길 경우 줄 바꿈)</div></li>
+                        <li><em>인도조건</em><div>인도조건 노출</div></li>
+                        <li><em>공급지역</em><div>공급지역 노출 (공급지역이 길 경우 줄 바꿈)</div></li>
+                        <li><em>부가세여부</em><div>부가세 여부 노출</div></li>
+                        <li><em>납입기한</em><div>납품기한 노출</div></li>
+                        <li class="flie_line">
+                            <em>첨부파일</em>
+                            <div>
+                                <ul>
+                                    <li><a href="#" title="첨부파일명1" download="">첨부파일명1.pdf</a></li>
+                                    <li><a href="#" title="첨부파일명2" download="">첨부파일명2.pdf</a></li>
+                                    <li><a href="#" title="첨부파일명3" download="">첨부파일명3.pdf</a></li>
+                                    <li><a href="#" title="첨부파일명4" download="">첨부파일명4.pdf</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_group">
+                        <button type="button" class="btn btn_radius btn_products_cartsave">관심상품등록</button>
+                        <button type="button" class="btn btn_radius btn_products_list">목록</button>
+                    </div>
+                </div><!-- data end -->
+            </div><!-- product_detail_info end -->
+            
+            <ul class="product_detail_list">
+                <li class="on"><a href="#product_detail_contents1">상품상세정보</a></li>
+                <li><a href="#product_detail_contents2">문의 및 견적요청</a></li>
+                <li><a href="#product_detail_contents3">회사정보</a></li>
+            </ul><!-- product_detail_list end -->
+
+            <div class="product_detail_contents" id="product_detail_contents1" style="display: block;">
+                <h6>상품상세정보</h6>
+                <dl>
+                    <dt>상품상세설명</dt>
+                    <dd>
+                        -  블루라이트 유해광 차단 (380~500nm) 물질 첨가<br />
+                        -  독일 더마테스트 엑설런트 등급 획득<br />
+                        -  홍조완화/피부장벽강화 인체적용 시험 완료<br />
+                        -  쿠션/미스트 마스크 묻어남 방지 테스트 완료<br /><br />
+                        
+                        <img src="../img/contents/detail_thumb_img.jpg" alt="">
+                    </dd>
+                </dl>
+            </div><!-- product_detail_contents1 end -->
+            <div class="product_detail_contents" id="product_detail_contents2">
+                <h6 class="mb0">문의 및 견적요청</h6>
+                <p class="ess ta_r"><span class="strong_txt1">*</span> 표시는 필수입력사항입니다.</p>
+                <table class="table_form">
+                    <caption>문의 및 견적 요청 입력폼(성명, 공공기관, 전화번호, 핸드폰번호, 이메일주소, 내용)</caption>
+                    <colgroup>
+                        <col style="width:167px;">
+                        <col style="width:433px;">
+                        <col style="width:167px;">
+                        <col style="width:433px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="col"><span class="strong_txt1">*</span> <span class="mobileHide">성명</span></th>
+                            <td>
+                                <div class="form">
+                                    <input type="text" title="성명 입력" class="wid_md" placeholder="성명">
+                                </div>
+                            </td>
+                            <th scope="col"><span class="strong_txt1">*</span> <span class="mobileHide">공공기관</span></th>
+                            <td>
+                                <div class="form">
+                                    <input type="text" title="공공기관 입력" class="wid_md" placeholder="공공기관">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="col"><span class="strong_txt1">*</span> <span class="mobileHide">전화번호</span></th>
+                            <td>
+                                <div class="form">
+                                    <input type="text" title="전화번호 입력" class="wid_md" placeholder="전화번호">
+                                </div>
+                            </td>
+                            <th scope="col"><span class="strong_txt1">*</span> <span class="mobileHide">핸드폰번호</span></th>
+                            <td>
+                                <div class="form">
+                                    <input type="text" title="핸드폰번호 입력" class="wid_md" placeholder="핸드폰번호">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="col"><span class="strong_txt1">*</span> <span class="mobileHide">이메일주소</span></th>
+                            <td colspan="3">
+                                <div class="form">
+                                    <input type="text" title="이메일주소 입력" class="wid_md" placeholder="이메일주소">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="col"><span class="strong_txt1">*</span> <span class="mobileHide">내용</span></th>
+                            <td colspan="3">
+                                <div class="form">
+                                    <textarea cols="30" rows="8" title="내용 입력"  placeholder="내용"></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="ref mt05">업체로부터 답변 또는 견적을 받기 위해 정확하게 입력해주시기 바랍니다.</p>
+                <div class="btn_group ta_r mt10">
+                    <button type="button" class="btn btn_lg btn_bg01 btn_radius">문의 및 견적요청등록</button>
+                </div>
+            </div><!-- product_detail_contents2 end -->
+            <div class="product_detail_contents" id="product_detail_contents3">
+                <h6>회사정보</h6>
+                <table class="table_view">
+                    <caption>회사정보 안내표(회사명, 회사주소, 홈페이지, 담당자, 전화번호, 팩스번호, 포상정보)</caption>
+                    <colgroup>
+                        <col style="width: 105px;">
+                        <col style="width: 495px;">
+                        <col style="width: 105px;">
+                        <col style="width: 495px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">회사명</th>
+                            <td>회사명 출력</td>
+                            <th scope="row">회사주소</th>
+                            <td>회사주소 출력</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">홈페이지</th>
+                            <td><a href="#" target="_blank" title="새창열림" class="strong_txt2">홈페이지 URL 출력 / 클릭시 해당 URL 이동</a></td>
+                            <th scope="row">담당자</th>
+                            <td>담당자명 출력</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">전화번호</th>
+                            <td>전화번호 출력</td>
+                            <th scope="row">팩스번호</th>
+                            <td>팩스번호 출력</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">포상정보</th>
+                            <td colspan="3">포상정보 출력</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6 class="mt40">등록제품</h6>
+                <div class="company_products_all">
+                    <div class="company_products_header">
+                        <p class="total">전체 <strong>30</strong>건</p>
+                        <a href="#" class="btn_company_products_all">더보기</a>
+                    </div>
+                    <ul class="company_products_list">
+                        <li>
+                            <a href="#">
+                                <div class="img">
+                                    <div class="bg" style="background-image: url(../img/contents/img_company_products01.jpg);"></div>
+                                </div>
+                                <div class="text">
+                                    <p class="name">발향 최고! 옷장용,차량 디퓨져 총30ml</p>
+                                    <p class="price"><strong>12,900</strong>원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img">
+                                    <div class="bg" style="background-image: url(../img/contents/img_company_products02.jpg);"></div>
+                                </div>
+                                <div class="text">
+                                    <p class="name">스카프</p>
+                                    <p class="price"><strong>15,000</strong>원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img">
+                                    <div class="bg" style="background-image: url(../img/contents/img_company_products03.jpg);"></div>
+                                </div>
+                                <div class="text">
+                                    <p class="name">애니멀중독 성장발육 흰살생선포50g</p>
+                                    <p class="price"><strong>3,500</strong>원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img">
+                                    <div class="bg" style="background-image: url(../img/contents/img_company_products04.jpg);"></div>
+                                </div>
+                                <div class="text">
+                                    <p class="name">블루반 블루캡슐 더블 베리어세럼</p>
+                                    <p class="price"><strong>14,840</strong>원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img">
+                                    <div class="bg" style="background-image: url(../img/contents/img_company_products05.jpg);"></div>
+                                </div>
+                                <div class="text">
+                                    <p class="name">리플렛 디자인 · 인쇄</p>
+                                    <p class="price"><strong>15,000</strong>원</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul><!-- company_products_list end -->
+                </div><!-- company_products_all end -->
+
+            </div><!-- product_detail_contents3 end -->
+            <div class="btn_group">
+                <button type="button" class="btn btn_lg btn_bg02 btn_radius">목록</button>
+            </div>
+        
+        </div><!-- contents end -->
+    </div><!-- container end -->
+
+    <footer>
+        <div class="footer_menu">
+            <ul>
+                <li><a href="#" class="strong_txt1 fm">개인정보보호방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">Q&A</a></li>
+            </ul>
+        </div><!-- footer_menu end -->
+        <div class="footer_body">
+            <div class="footer_info">
+                <div class="footer_addr">
+                    <img src="../img/common/footer_logo.png" alt="여성기업제품 공공구매" class="mobileHide">
+                    <img src="../img/common/footer_logo_m.png" alt="여성기업제품 공공구매" class="mobileShow">
+                    <p class="addr">135-514 서울특별시 강남구 역삼로 221 한국여성경제인협회 4층</p>
+                    <p class="t_tel">문의전화 : 02-369-0900</p>
+                    <p class="copy">Copyright(C) Korean Women Entrepreneurs Association All rights reserved.</p>
+                </div>
+                <div class="tel">
+                    <b>문의전화</b>
+                    <p>02-369-0900</p>
+                </div>
+            </div>
+            <div class="family_site">
+                <a href="#">기업규제 원탁협의 바로가기</a>
+                <a href="#">여성기업 종합정보포털 wBiz 바로가기</a>
+            </div>
+        </div><!-- footer_body end -->
+    </footer>
+
+</body>
+</html>
